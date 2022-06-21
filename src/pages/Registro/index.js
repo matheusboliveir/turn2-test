@@ -1,14 +1,20 @@
 import { useContext } from "react";
 import Table from "../../components/Table";
 import { UserContext } from "../../routes";
-import "./Registro.css";
 
 export default function Registro() {
   const [characterList] = useContext(UserContext);
 
-  return characterList ? (
-    <Table characterList={characterList} />
-  ) : (
-    <h6>Sem registros</h6>
+  return (
+    <div className="container">
+      {characterList ? (
+        <Table
+          data={characterList}
+          columns={["id", "name", "species", "status"]}
+        />
+      ) : (
+        <h2 className="text--sm">Sem registros</h2>
+      )}
+    </div>
   );
 }

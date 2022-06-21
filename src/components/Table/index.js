@@ -1,22 +1,25 @@
-export default function Table({ characterList }) {
-  console.log(characterList);
+import "./Table.css";
+
+export default function Table({ data, columns }) {
   return (
-    <table>
-      <thead>
+    <table className="table">
+      <thead className="table__head">
         <tr>
-          <th>id</th>
-          <th>name</th>
-          <th>species</th>
-          <th>status</th>
+          {columns.map((column) => (
+            <th key={column} className="table__cell">
+              {column}
+            </th>
+          ))}
         </tr>
       </thead>
       <tbody>
-        {characterList.map((character) => (
-          <tr>
-            <td>{character.id}</td>
-            <td>{character.name}</td>
-            <td>{character.species}</td>
-            <td>{character.status}</td>
+        {data.map((item, index) => (
+          <tr key={index}>
+            {columns.map((column) => (
+              <td key={`${index}-${column}`} className="table__cell">
+                {item[column]}
+              </td>
+            ))}
           </tr>
         ))}
       </tbody>

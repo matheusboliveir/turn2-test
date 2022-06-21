@@ -5,6 +5,57 @@
   --tertiary: #ffffff;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 900px;
+  width: 90%;
+  margin: 3rem auto;
+}
+
+.button {
+  padding: 0.7em 1em;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.text--sm {
+  font-size: 1.3rem;
+}
+
+.text--lg {
+  font-size: 1.6rem;
+}
+
+.button--full {
+  background-color: var(--primary);
+  color: var(--tertiary);
+  border: none;
+}
+
+.button--full:not([disabled]):hover {
+  box-shadow: var(--shadowPrimary);
+}
+
+.button--outline {
+  border: 1px solid var(--tertiary);
+  color: var(--tertiary);
+}
+
+.button--outline:not([disabled]):hover {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
 body {
   background: var(--secondary);
   color: #ffffff;

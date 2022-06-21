@@ -1,0 +1,18 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table__head {
+  text-transform: uppercase;
+}
+
+.table__cell {
+  padding: 1rem;
+  text-align: center;
+}
+
+.table,
+.table__cell {
+  border: 1px solid var(--tertiary);
+}
